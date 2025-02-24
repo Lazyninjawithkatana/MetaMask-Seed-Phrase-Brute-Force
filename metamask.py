@@ -21,8 +21,8 @@ options.add_argument(f"--profile={firefox_profile}")
 service = Service(gecko_path)
 driver = webdriver.Firefox(service=service, options=options)
 
-# MetaMask's URL, which you want to open
-metamask_url = "moz-extension://5a6c7373-6154-47fd-b9e7-715a24f11a65/home.html#onboarding/import-with-recovery-phrase"
+# MetaMask's URL, which you want to open. You should replace it with your own URL. 
+metamask_url = "moz-extension://5b6c83673-6554-44fd-b9e7-71512331/home.html#onboarding/import-with-recovery-phrase"
 driver.get(metamask_url)
 
 sleep(3)
