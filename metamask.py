@@ -6,10 +6,10 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 # GeckoDriver
-gecko_path = "/home/noname/Desktop/selenium/geckodriver"
+gecko_path = "/path/to/the/selenium/geckodriver"
 
-# MetaMask profile. 
-firefox_profile = "/home/noname/.mozilla/firefox/6u9lrsfk.default-esr"  
+# FireFox profile. 
+firefox_profile = "/path/tothe/.mozilla/firefox/asdsad.default-esr"  
 
 # Firefox parameter configuration
 options = Options()
@@ -22,7 +22,7 @@ service = Service(gecko_path)
 driver = webdriver.Firefox(service=service, options=options)
 
 # MetaMask's URL, which you want to open. You should replace it with your own URL. 
-metamask_url = "moz-extension://5b6c83673-6554-44fd-b9e7-71512331/home.html#onboarding/import-with-recovery-phrase"
+metamask_url = "moz-extension://dasdasdsadasdasdasd/import-with-recovery-phrase"
 driver.get(metamask_url)
 
 sleep(3)
@@ -31,12 +31,12 @@ sleep(3)
 with open("cleaned.txt", "r", encoding="utf-8") as file:
     words = file.read().replace("\n", "").split(",")  # world list
 
-# 12 element
+# 12 element. If you want 15,18,21 or 24 you should change number ------------->here
 fields = [driver.find_element(By.ID, f'import-srp__srp-word-{i}') for i in range(12)]
 
 # Clear all fields and write random words
 while True:
-    # We are preparing 12 random words.
+    # We are preparing 12 random words.|here<-----------and 
     chosen_words = random.sample(words, 12)
 
     for field, word in zip(fields, chosen_words):
